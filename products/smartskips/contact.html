@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>SmartSkips — Contact</title>
+  <meta name="description" content="Send a message to HazeCraft about SmartSkips.">
+  <link rel="stylesheet" href="../../assets/styles.css"/>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../../index.html" aria-label="HazeCraft home">
+      <!-- HazeCraft mark (same as other pages) -->
+      <svg class="logo" width="40" height="40" viewBox="0 0 48 48" role="img" aria-label="HazeCraft">
+        <defs><linearGradient id="grad-hc" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#818cf8"/></linearGradient></defs>
+        <rect x="2.5" y="2.5" width="43" height="43" rx="12" fill="url(#grad-hc)"/>
+        <circle cx="17" cy="24" r="6.5" fill="#0b1020" opacity=".95"/>
+        <rect x="25" y="17" width="6" height="14" rx="3" fill="#0b1020" opacity=".95"/>
+        <rect x="33.5" y="20.5" width="5" height="8" rx="2.5" fill="#9FE1C8" opacity=".95"/>
+      </svg>
+      <div class="brandtext">
+        <span class="brandname">HazeCraft Tech</span>
+        <span class="tagline">Product: <strong>SmartSkips</strong></span>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="../../index.html" class="hide-on-mobile">Home</a>
+      <a href="../../services-cloud-aks.html">Cloud & AKS</a>
+      <a href="../../services-ai.html">AI/ML</a>
+      <a class="active" href="./">SmartSkips</a>
+      <a href="#contact" class="btn">Company Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero compact">
+      <h1>Contact SmartSkips</h1>
+      <p class="lead">Send us a note about SmartSkips pilots, integration, or pricing.</p>
+    </section>
+
+    <!-- In-page contact (no Calendly) -->
+    <section class="panel" id="contact">
+      <h2 class="h5">Send a message</h2>
+      <form action="https://formspree.io/f/yourID" method="POST" class="contact-form" data-ajax>
+        <div class="row">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="_replyto" placeholder="Email" required>
+        </div>
+        <textarea name="message" placeholder="How can we help?" required></textarea>
+        <input type="hidden" name="context" value="SmartSkips / Contact page">
+        <button type="submit" class="btn">Send Message</button>
+        <div class="notice ok hidden">Thanks! We’ll reply to your email.</div>
+        <div class="notice err hidden">Hmm, couldn’t send. Email us at
+          <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>.
+        </div>
+      </form>
+      <p class="micro muted" style="margin-top:8px">
+        Prefer email? <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="muted">© <span id="year"></span> HazeCraft Tech Inc.</span>
+    <a href="mailto:connect@hazecrafttech.com" class="muted">connect@hazecrafttech.com</a>
+  </footer>
+
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

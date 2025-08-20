@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI/ML Enablement — HazeCraft</title>
+  <meta name="description" content="HazeCraft Tech helps teams turn practical AI ideas into production: problem framing, data readiness, MVP pilots, and MLOps deployment."/>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="HazeCraft home">
+      <svg class="logo" width="40" height="40" viewBox="0 0 48 48" role="img" aria-label="HazeCraft">
+        <defs><linearGradient id="grad-hc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#818cf8"/></linearGradient></defs>
+        <rect x="2.5" y="2.5" width="43" height="43" rx="12" fill="url(#grad-hc)"/>
+        <circle cx="17" cy="24" r="6.5" fill="#0b1020" opacity=".95"/>
+        <rect x="25" y="17" width="6" height="14" rx="3" fill="#0b1020" opacity=".95"/>
+        <rect x="33.5" y="20.5" width="5" height="8" rx="2.5" fill="#9FE1C8" opacity=".95"/>
+      </svg>
+      <div class="brandtext">
+        <span class="brandname">HazeCraft Tech</span>
+        <span class="tagline">Cloud · AI · Media</span>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="index.html" class="hide-on-mobile">Home</a>
+      <a href="services-cloud-aks.html">Cloud & AKS</a>
+      <a class="active" href="services-ai.html">AI/ML</a>
+      <a href="products/smartskips/">SmartSkips</a>
+      <a href="#contact" class="btn">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero hero-abstract">
+      <div class="hero-content">
+        <h1>AI/ML Enablement</h1>
+        <p class="lead">
+          Turn practical AI ideas into production: problem framing, data readiness, MVP pilots,
+          and MLOps deployment on reliable cloud foundations.
+        </p>
+        <div class="chips">
+          <span class="chip">Discovery → MVP → Scale</span>
+          <span class="chip">Azure · Terraform · ADO</span>
+          <span class="chip">Computer Vision · NLP · Tabular</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3 class="h5">Problem Framing & Data Readiness</h3>
+        <p class="muted">Define success metrics, map data sources, assess privacy/compliance, and surface quick-win pilots.</p>
+      </div>
+      <div class="card">
+        <h3 class="h5">MVP Pilots</h3>
+        <p class="muted">Ship thin-slice prototypes that prove value — notebooks → APIs → simple UIs — with measurable outcomes.</p>
+      </div>
+      <div class="card">
+        <h3 class="h5">MLOps & Deployment</h3>
+        <p class="muted">Pipelines, model registries, monitoring, and rollback strategies so teams can operate models safely.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2 class="h4">Example solutions</h2></div>
+      <ul class="muted">
+        <li>Content moderation & scene scoring for media (e.g., SmartSkips foundations).</li>
+        <li>Recommendations and personalization for catalogs or knowledge bases.</li>
+        <li>Cost/usage prediction and anomaly detection for cloud or product telemetry.</li>
+        <li>Contact-center analytics: summarization, topic tagging, redaction.</li>
+        <li>Document intelligence: extraction, search, retrieval-augmented generation.</li>
+      </ul>
+      <div class="code-block">
+        <div class="code-title">
+          # Minimal pattern: API-first MVP
+          <button class="copy-btn" data-copy="#ai-snippet">Copy</button>
+        </div>
+        <pre id="ai-snippet" class="code-snippet">POST /predict
+      Request: {"features": {...}}
+      Response: {"score": 0.87, "explanation": {"top_features": ["x1","x5"]}}</pre>
+      </div>
+
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2 class="h4">Outcomes you can expect</h2></div>
+      <ul class="muted">
+        <li>Executive-ready ROI framing and risk assessment.</li>
+        <li>Production-grade deployment on your Azure foundations (AKS, Functions, or App Services).</li>
+        <li>Reproducible pipelines (Terraform + ADO) and clear cost ownership.</li>
+      </ul>
+      <p><a class="btn cta" href="#contact">Talk to us</a></p>
+    </section>
+
+    <!-- CONTACT PANEL -->
+    <section class="panel" id="contact">
+      <h2 class="h5">Send a message</h2>
+      <form action="https://formspree.io/f/yourID" method="POST" class="contact-form" data-ajax>
+        <div class="row">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="_replyto" placeholder="Email" required>
+        </div>
+        <textarea name="message" placeholder="How can we help?" required></textarea>
+        <input type="hidden" name="context" value="AI/ML">
+        <button type="submit" class="btn">Send Message</button>
+        <div class="notice ok hidden">Thanks! We’ll reply to your email.</div>
+        <div class="notice err hidden">Hmm, couldn’t send. Email us at
+          <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>.
+        </div>
+      </form>
+      <p class="micro muted" style="margin-top:8px">
+        Prefer email? <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="muted">© <span id="year"></span> HazeCraft Tech Inc.</span>
+    <a href="mailto:connect@hazecrafttech.com" class="muted">connect@hazecrafttech.com</a>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
