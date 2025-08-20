@@ -1,119 +1,77 @@
-// year
-document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
+// assets/app.js
 
-// simple tabs on Home page demo block
-const tabs = document.querySelectorAll('.tab');
-if (tabs.length) {
-  tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabs.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.pane').forEach(p => p.style.display = 'none');
-      const target = document.querySelector(btn.dataset.target);
-      if (target) target.style.display = 'block';
-    });
-  });
-}
+document.addEventListener('DOMContentLoaded', () => {
+  // === Mobile menu ===
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.querySelector('[data-nav]');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  }
 
-// smooth scroll for in-page anchors
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id.length > 1) {
-      const el = document.querySelector(id);
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.replaceState(null, "", id);
-      }
+  // === Close dropdowns on ESC / outside (desktop) ===
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.menu-panel').forEach(p => p.style.display = 'none');
     }
   });
-});
-
-// AJAX submit for forms marked data-ajax (works with Formspree or similar)
-document.querySelectorAll('form[data-ajax]').forEach(form => {
-  form.addEventListener('submit', async (e) => {
-    const ok = form.querySelector('.notice.ok');
-    const err = form.querySelector('.notice.err');
-    ok && ok.classList.add('hidden');
-    err && err.classList.add('hidden');
-
-    // Only intercept if posting to an HTTP(S) endpoint
-    if (!form.action || !/^https?:\/\//.test(form.action)) return;
-
-    e.preventDefault();
-    const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
-      if (res.ok) {
-        ok && ok.classList.remove('hidden');
-        form.reset();
-      } else {
-        err && err.classList.remove('hidden');
-      }
-    } catch {
-      err && err.classList.remove('hidden');
+  document.addEventListener('click', (e) => {
+    const inMenu = e.target.closest('.menu');
+    if (!inMenu) {
+      document.querySelectorAll('.menu-panel').forEach(p => p.style.display = 'none');
     }
   });
-});
 
+  // === Contact page: dynamic subtitle + button text (optional) ===
+  const interest = document.querySelector('select[name="interest"]');
+  const hint = document.getElementById('topic-hint');
+  const submitBtn = document.querySelector('#hc-contact button[type="submit"]');
 
-// copy-to-clipboard for code blocks
-document.querySelectorAll('[data-copy]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const sel = btn.getAttribute('data-copy');
-    const el = document.querySelector(sel);
-    if (!el) return;
-    const text = el.textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      const prev = btn.textContent;
-      btn.textContent = 'Copied!';
-      setTimeout(() => (btn.textContent = prev), 1200);
+  const pretty = (v) => ({
+    'AI Solutions': 'AI',
+    'Networking': 'Networking',
+    'Cloud / AKS': 'Cloud',
+    'OTT / Media (SmartSkips)': 'OTT/Media',
+    'Other': 'AI, Networking, Cloud, or OTT/Media'
+  }[v] || 'AI, Networking, Cloud, or OTT/Media');
+
+  if (interest && hint) {
+    interest.addEventListener('change', () => {
+      const area = pretty(interest.value);
+      hint.textContent = area === 'AI, Networking, Cloud, or OTT/Media'
+        ? area
+        : `You’re asking about ${area}`;
+      if (submitBtn) submitBtn.textContent = 'Send request';
     });
-  });
+  }
+
+  // === Contact page: AJAX submit to Formspree (optional) ===
+  const form = document.getElementById('hc-contact');
+  if (form) {
+    const statusEl = document.getElementById('hc-status');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      if (statusEl) statusEl.textContent = 'Sending…';
+
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (resp.ok) {
+          if (statusEl) statusEl.textContent = 'Thanks! We’ll be in touch shortly.';
+          form.reset();
+        } else {
+          if (statusEl) statusEl.textContent = 'Could not send. Please try again.';
+        }
+      } catch (err) {
+        console.error(err);
+        if (statusEl) statusEl.textContent = 'Network error. Please try again.';
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    });
+  }
 });
-
-// // smooth scroll for in-page anchors
-// document.querySelectorAll('a[href^="#"]').forEach(a => {
-//   a.addEventListener('click', e => {
-//     const id = a.getAttribute('href');
-//     if (id.length > 1) {
-//       const el = document.querySelector(id);
-//       if (el) {
-//         e.preventDefault();
-//         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-//         history.replaceState(null, "", id);
-//       }
-//     }
-//   });
-// });
-
-// // simple AJAX submit for forms marked data-ajax
-// document.querySelectorAll('form[data-ajax]').forEach(form => {
-//   form.addEventListener('submit', async (e) => {
-//     const ok = form.querySelector('.notice.ok');
-//     const err = form.querySelector('.notice.err');
-//     ok && ok.classList.add('hidden');
-//     err && err.classList.add('hidden');
-
-//     // Use Formspree (or similar) endpoint in action attribute.
-//     // If you haven't set one yet, let it do normal POST/navigation.
-//     if (!form.action || !/^https?:\/\//.test(form.action)) return;
-
-//     e.preventDefault();
-//     const data = new FormData(form);
-//     try {
-//       const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
-//       if (res.ok) {
-//         ok && ok.classList.remove('hidden');
-//         form.reset();
-//       } else {
-//         err && err.classList.remove('hidden');
-//       }
-//     } catch {
-//       err && err.classList.remove('hidden');
-//     }
-//   });
-// });
-
-
