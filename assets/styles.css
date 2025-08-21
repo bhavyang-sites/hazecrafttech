@@ -223,5 +223,43 @@ a{color:inherit;text-decoration:none}
 .btn{display:inline-block;padding:.75rem 1.1rem;border:1px solid #1b2330;border-radius:12px;background:#12161e;color:#e8eef7;font-weight:700}
 .btn.secondary{background:transparent}
 
+/* === Hero slideshow === */
+.hero-carousel { position: relative; }
+.hero-carousel .slide {
+  display: none;
+  text-decoration: none;
+  color: inherit;
+  animation: fadeIn .45s ease;
+}
+.hero-carousel .slide.is-active { display: block; }
+.hero-carousel h1 { color:#0c1520; margin:0 0 .5rem; }
+.hero-carousel .lead { color:#35506a; }
+
+.slides-nav { display:flex; gap:8px; margin-top:10px; }
+.slides-nav .dot {
+  width:10px; height:10px; border-radius:50%;
+  background:#9fb0c8; border:none; cursor:pointer;
+}
+.slides-nav .dot.is-active { background:var(--accent, #35d0b6); }
+
+@keyframes fadeIn { from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none} }
+
+/* === Image box & overlay (“UNLOCK SIMPLICITY”) adjustments === */
+.tagline{ position:relative; overflow:hidden; border-radius:20px; background:#0c1520; aspect-ratio:16/10; }
+.tagline img{ width:100%; height:100%; object-fit:cover; display:block; border-radius:12px; }
+.tagline::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.45)); z-index:1; }
+/* Move text to bottom-right and scale down */
+.tagline .over{
+  position:absolute; z-index:2;
+  right:16px; bottom:16px; left:auto; text-align:right;
+  color:#fff; font-weight:900; 
+  font-size: clamp(28px, 3.2vw, 46px); line-height:.95; letter-spacing:.5px;
+  text-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+@media (max-width: 900px){
+  .tagline .over{ font-size: clamp(22px, 6vw, 34px); right:12px; bottom:12px; }
+}
+
+
 
 

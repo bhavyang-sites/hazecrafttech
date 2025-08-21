@@ -74,15 +74,48 @@
   <main>
     <!-- HERO (light) -->
     <section class="hero">
-      <div class="container hero-inner">
-        <div>
+      <!-- LEFT: slideshow (replace your left hero content with this) -->
+      <div id="hero-carousel" class="hero-carousel" tabindex="0" aria-label="Key offerings">
+  <!-- Slide 0 — Cloud -->
+        <a class="slide is-active" href="solutions/cloud.html">
           <h1>Redefine your hybrid cloud strategy</h1>
           <p class="lead">Unify AI, networking, and cloud operations with opinionated patterns that cut risk and accelerate delivery.</p>
-          <div class="actions">
-            <a class="btn" href="solutions/ai.html">Explore AI</a>
-            <a class="btn secondary" href="solutions/networking.html">Explore Networking</a>
-        </div>
+        </a>
+
+  <!-- Slide 1 — AI -->
+        <a class="slide" href="solutions/ai.html">
+          <h1>Operational AI that ships</h1>
+          <p class="lead">From scene scoring to skip-maps and policy, pipelines that go from MVP to production without surprises.</p>
+        </a>
+
+  <!-- Slide 2 — Networking -->
+        <a class="slide" href="solutions/networking.html">
+          <h1>Cloud networks without surprises</h1>
+          <p class="lead">Hub/spoke, ER + BGP, NVAs, and controlled egress with patterns that scale safely.</p>
+        </a>
+
+  <!-- Slide 3 — OTT / Media -->
+        <a class="slide" href="solutions/ott-media.html">
+          <h1>Family-friendly streaming</h1>
+          <p class="lead">SmartSkips profiles and skip-maps help your player enforce policy in real time.</p>
+        </a>
+
+  <!-- Slide 4 — Product -->
+        <a class="slide" href="products/smartskips/index.html">
+          <h1>SmartSkips — Family Mode</h1>
+          <p class="lead">Deterministic, explainable filtering with Mild/Strict/Custom profiles for audits and trust.</p>
+        </a>
+
+  <!-- dots -->
+      <div class="slides-nav" role="tablist" aria-label="Hero slides">
+        <button class="dot is-active" data-to="0" aria-label="Cloud slide"></button>
+        <button class="dot" data-to="1" aria-label="AI slide"></button>
+        <button class="dot" data-to="2" aria-label="Networking slide"></button>
+        <button class="dot" data-to="3" aria-label="OTT/Media slide"></button>
+        <button class="dot" data-to="4" aria-label="SmartSkips slide"></button>
       </div>
+    </div>
+
 
         <div class="tagline">
           <img src="assets/unlock-simplicity.jpg" alt="">

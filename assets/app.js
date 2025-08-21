@@ -86,4 +86,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+// === Hero carousel ===
+const carousel = document.getElementById('hero-carousel');
+if (carousel) {
+  const slides = Array.from(carousel.querySelectorAll('.slide'));
+  const dots = Array.from(carousel.querySelectorAll('.dot'));
+  let i = slides.findIndex(s => s.classList.contains('is-active'));
+  if (i < 0) { i = 0; slides[0].classList.add('is-active'); dots[0]?.classList.add('is-active'); }
+
+  const show = (idx) => {
+    slides.forEach((s,k)=> s.classList.toggle('is-active', k===idx));
+    dots.forEach((d,k)=> d.classList.toggle('is-active', k===idx));
+    i = idx;
+  };
+
+  const next = () => show((i + 1) % slides.length);
+  let timer = setInterval(next, 6000);
+
+  // pause on hover/focus
+  carousel.addEventListener('mouseenter', ()=> clearInterval(timer));
+  carousel.addEventListener('mouseleave', ()=> timer = setInterval(next, 6000));
+  carousel.addEventListener('focusin', ()=> clearInterval(timer));
+  carousel.addEventListener('focusout', ()=> timer = setInterval(next, 6000));
+
+  // dots click
+  dots.forEach((d,k)=> d.addEventListener('click', (e)=> { e.preventDefault(); show(k); }));
+
+  // keyboard left/right for accessibility
+  carousel.addEventListener('keydown', (e)=>{
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') show((i - 1 + slides.length) % slides.length);
+  });
+}
 });
