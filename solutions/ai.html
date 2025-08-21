@@ -1,18 +1,20 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><title>AI Solutions • HazeCraft Tech</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!-- Typography (Inter + Merriweather) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="../assets/styles.css">
-<meta name="description" content="Vision pipelines, moderation, and automation.">
+<meta name="description" content="Applied AI: copilots & workflow automation, document intelligence, search & RAG, and safety guardrails.">
 </head><body>
 
 <!-- HEADER -->
 <header class="site-header">
   <div class="container navbar stack">
-    <a href="" class="brand">Haze<span>Craft</span></a>
+    <a href="../index.html" class="brand">Haze<span>Craft</span></a>
 
     <button class="menu-toggle" data-nav-toggle aria-label="Open menu">☰</button>
 
@@ -22,19 +24,19 @@
         <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Solutions ▾</button>
         <div class="menu-panel" role="menu">
           <div class="menu-list">
-            <a class="menu-item" href="../solutions/ai.html">
+            <a class="menu-item" href="ai.html">
               <strong>AI Solutions</strong>
-              <small>Vision, moderation, and automation to cut toil & risk.</small>
+              <small>Copilots, document intelligence, search & guardrails.</small>
             </a>
-            <a class="menu-item" href="../solutions/networking.html">
+            <a class="menu-item" href="networking.html">
               <strong>Networking</strong>
               <small>Azure hub/spoke, ER, BGP, firewalls, zero-trust patterns.</small>
             </a>
-            <a class="menu-item" href="../solutions/cloud.html">
+            <a class="menu-item" href="cloud.html">
               <strong>Cloud</strong>
               <small>Landing zones, CNI/AKS, IaC with Terraform & ADO pipelines.</small>
             </a>
-            <a class="menu-item" href="../solutions/ott-media.html">
+            <a class="menu-item" href="ott-media.html">
               <strong>OTT / Media</strong>
               <small>SmartSkips “Family Mode” filtering & playback SDK.</small>
             </a>
@@ -49,11 +51,11 @@
           <div class="menu-list">
             <a class="menu-item" href="../products/index.html">
               <strong>SmartSkips</strong>
-              <small>Scene scoring + skip-map engine with profiles.</small>
+              <small>Filtering engine with profiles & skip-maps.</small>
             </a>
             <a class="menu-item" href="../products/smartskips/index.html">
               <strong>Player Demo</strong>
-              <small>React player with Family Mode & profile toggles.</small>
+              <small>Family Mode playback with profile toggles.</small>
             </a>
           </div>
         </div>
@@ -64,24 +66,47 @@
   </div>
 </header>
 
-
-
-
 <main>
   <section class="hero">
     <div class="container hero-inner">
       <div>
-        <h1>Operational AI that ships</h1>
-        <p>From Rekognition-backed MVPs to bespoke models, we build practical pipelines: ingest → score → rules → skip/blur maps → player actions.</p>
+        <h1>Applied AI for real outcomes</h1>
+        <p class="lead">We design and ship AI that removes toil and amplifies teams—<strong>task-focused copilots</strong>, <strong>document intelligence</strong>, <strong>semantic search + RAG</strong>, and <strong>safety guardrails</strong> that keep you compliant.</p>
+
         <div class="grid grid-2" style="margin-top:18px">
-          <div class="card"><h3>Scene Scoring</h3><p>Thresholded labels, profiles (Mild/Strict/Custom), audit trail.</p></div>
-          <div class="card"><h3>Playback Control</h3><p>Skip-maps, markers, and analytics for safe, compliant streams.</p></div>
+          <div class="card">
+            <h3>Copilots & Automation</h3>
+            <p>Task-oriented assistants for support, sales, and engineering. Integrated with your tools (tickets, CRM, repos) with clear hand-off and review.</p>
+          </div>
+          <div class="card">
+            <h3>Document Intelligence</h3>
+            <p>Ingest, classify, extract, and summarize long-form content (PDFs, forms). Human-in-the-loop review, versioning, and audit history.</p>
+          </div>
+          <div class="card">
+            <h3>Search & Retrieval (RAG)</h3>
+            <p>Ground responses in your data with vector search, caching, and citations. Content pipelines for freshness and access control.</p>
+          </div>
+          <div class="card">
+            <h3>Safety & Guardrails</h3>
+            <p>PII redaction, prompt hardening, policy checks, and observability. Track drift and quality with evals tailored to your workflows.</p>
+          </div>
         </div>
       </div>
+
       <div class="tagline">
-        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="">
+        <img src="../assets/ai.jpg" alt="">
         <div class="over">BUILD<br>WITH DATA</div>
       </div>
+    </div>
+  </section>
+
+  <!-- Optional: process section; delete if you want it shorter -->
+  <section class="container" style="padding:24px 0 8px">
+    <h2 class="h2">A practical path to value</h2>
+    <div class="grid grid-3" style="margin-top:10px">
+      <div class="card"><h3>1) Scope</h3><p>Pick one measurable workflow (e.g., triage a ticket, summarize a doc).</p></div>
+      <div class="card"><h3>2) Pilot</h3><p>Integrate with your systems, add guardrails, and test with real users.</p></div>
+      <div class="card"><h3>3) Scale</h3><p>Observability, evals, and change-management to roll out with confidence.</p></div>
     </div>
   </section>
 </main>
@@ -93,5 +118,5 @@
   </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-<script src="assets/app.js"></script>
+<script src="../assets/app.js"></script>
 </body></html>
