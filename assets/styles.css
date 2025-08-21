@@ -259,7 +259,7 @@ a{color:inherit;text-decoration:none}
   line-height: 1.1;
   letter-spacing: 1px;
 
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.15);  /* or try 0.2 if too light */
   padding: 12px 20px;
   border-radius: 8px;
   text-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
