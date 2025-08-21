@@ -60,8 +60,36 @@ p { font-size: var(--fs-400); margin: 0 0 1rem; color: var(--fg, #cfd9ea); }
 .small, .hint { font-size: var(--fs-300); opacity:.9; }
 
 /* Nav + brand polish */
-.brand { font-family: var(--font-sans); font-weight: var(--w-bold); letter-spacing: .2px; }
-.nav a, .drop-btn { font-family: var(--font-sans); font-weight: var(--w-semibold); }
+/* Brand size */
+.brand{
+  font-family: var(--font-sans);
+  font-weight: var(--w-bold);
+  letter-spacing:.2px;
+  font-size: clamp(22px, 1.8vw, 28px); /* bigger logo text */
+  line-height:1;
+}
+
+/* Normalize nav link + dropdown button typography */
+.nav>a,
+.drop-btn{
+  font-family: var(--font-sans);
+  font-size: 1rem;          /* 16px */
+  font-weight: var(--w-semibold);
+  line-height: 1;
+  padding:10px 14px;        /* same padding so they look identical */
+  border:1px solid transparent;
+  background:transparent;
+  color: var(--fg);
+}
+.nav>a:hover,
+.drop-btn:hover{
+  background:#12161e;
+  border-color:#1b2330;
+}
+
+/* (Optional) make the hamburger button a touch larger */
+.menu-toggle{ padding:8px 10px; transform:scale(1.05); }
+
 
 /* Hero headline tweak (if you use .hero h1) */
 .hero h1 { letter-spacing: -0.5px; }
@@ -90,7 +118,6 @@ a{color:inherit;text-decoration:none}
   padding:10px 14px;border-radius:999px;border:1px solid transparent;
   font-weight:600;color:var(--fg);background:transparent;cursor:pointer
 }
-.nav>a:hover,.drop-btn:hover{background:#12161e;border-color:#1b2330}
 .menu{position:relative}
 .menu-panel{
   position:absolute;left:0;top:110%;min-width:520px;padding:14px;background:var(--bg-2);
@@ -300,6 +327,19 @@ a{color:inherit;text-decoration:none}
 
 .unlock { color: #00e0ff; }
 .simplicity { color: #ffffff; }
+/* Sticky footer layout */
+html, body{ height:100%; }
+body{
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
+}
+main{ flex:1 0 auto; }         /* pushes footer down when content is short */
+.site-footer{ margin-top:0; }  /* remove any extra margin */
+
+/* Optional: reduce excess bottom padding on the final section */
+main > section:last-of-type{ padding-bottom:24px; }
+
 
 
 
