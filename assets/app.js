@@ -20,6 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.menu-panel').forEach(p => p.style.display = 'none');
     }
   });
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tabs .tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelectorAll('.pane').forEach(p => p.style.display='none');
+        const pane = document.querySelector(tab.dataset.target);
+        if (pane) pane.style.display = 'block';
+      });
+    });
+  });
 
   // === Contact page: dynamic subtitle + button text (optional) ===
   const interest = document.querySelector('select[name="interest"]');

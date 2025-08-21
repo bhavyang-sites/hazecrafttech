@@ -9,31 +9,62 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/styles.css"/>
+  <base href="/hazecrafttech/">
+  <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="../../index.html" aria-label="HazeCraft home">
-      <svg class="logo" width="40" height="40" viewBox="0 0 48 48" role="img" aria-label="HazeCraft">
-        <defs><linearGradient id="grad-hc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#818cf8"/></linearGradient></defs>
-        <rect x="2.5" y="2.5" width="43" height="43" rx="12" fill="url(#grad-hc)"/>
-        <circle cx="17" cy="24" r="6.5" fill="#0b1020" opacity=".95"/>
-        <rect x="25" y="17" width="6" height="14" rx="3" fill="#0b1020" opacity=".95"/>
-        <rect x="33.5" y="20.5" width="5" height="8" rx="2.5" fill="#9FE1C8" opacity=".95"/>
-      </svg>
-      <div class="brandtext">
-        <span class="brandname">HazeCraft Tech</span>
-        <span class="tagline">Product: <strong>SmartSkips</strong></span>
+  <header class="site-header">
+  <div class="container navbar stack">
+    <a href="index.html" class="brand">Haze<span>Craft</span></a>
+
+    <button class="menu-toggle" data-nav-toggle aria-label="Open menu">☰</button>
+
+    <nav class="nav" data-nav>
+      <div class="menu">
+        <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Solutions ▾</button>
+        <div class="menu-panel" role="menu">
+          <div class="menu-list">
+            <a class="menu-item" href="solutions/ai.html">
+              <strong>AI Solutions</strong>
+              <small>Vision, moderation, and automation to cut toil & risk.</small>
+            </a>
+            <a class="menu-item" href="solutions/networking.html">
+              <strong>Networking</strong>
+              <small>Azure hub/spoke, ER, BGP, firewalls, zero-trust patterns.</small>
+            </a>
+            <a class="menu-item" href="solutions/cloud.html">
+              <strong>Cloud</strong>
+              <small>Landing zones, CNI/AKS, IaC with Terraform & ADO.</small>
+            </a>
+            <a class="menu-item" href="solutions/ott-media.html">
+              <strong>OTT / Media</strong>
+              <small>SmartSkips “Family Mode” filtering & playback SDK.</small>
+            </a>
+          </div>
+        </div>
       </div>
-    </a>
-    <nav class="links">
-      <a class="hide-on-mobile" href="../../index.html">Home</a>
-      <a href="../../services-cloud-aks.html">Cloud & AKS</a>
-      <a href="../../services-ai.html">AI/ML</a>
-      <a class="active" href="./">SmartSkips</a>
-      <a href="#contact" class="btn">Contact</a>
+
+      <div class="menu">
+        <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Products ▾</button>
+        <div class="menu-panel" role="menu">
+          <div class="menu-list">
+            <a class="menu-item" href="products/index.html">
+              <strong>SmartSkips</strong>
+              <small>Scene scoring + skip-map engine with profiles.</small>
+            </a>
+            <a class="menu-item" href="products/smartskips/index.html">
+              <strong>Player Demo</strong>
+              <small>React player with Family Mode & toggles.</small>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="contact/index.html">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
+
 
   <main class="container">
     <section class="hero">
@@ -89,7 +120,7 @@
       </div>
 
       <div id="teaserPane" class="pane" style="display:block">
-        <video controls playsinline preload="metadata" poster="../../assets/teaser-poster.jpg"
+        <video controls playsinline preload="metadata" poster="assets/teaser-poster.jpg"
                class="player" controlsList="nodownload">
           <source src="TEASER_SIGNED_URL.mp4" type="video/mp4"/>
           Your browser does not support HTML5 video.
@@ -97,7 +128,7 @@
       </div>
 
       <div id="rawPane" class="pane">
-        <video controls playsinline preload="metadata" poster="../../assets/raw-poster.jpg"
+        <video controls playsinline preload="metadata" poster="assets/raw-poster.jpg"
                class="player" controlsList="nodownload">
           <source src="RAW_SIGNED_URL.mp4" type="video/mp4"/>
         </video>
@@ -159,6 +190,6 @@
   </footer>
 
 
-  <script src="../../assets/app.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
