@@ -203,7 +203,7 @@ a{color:inherit;text-decoration:none}
 /* subtle darken overlay so text pops */
 .tagline::after{
   content:""; position:absolute; inset:0; z-index:1;
-  background:linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.45));
+  background:linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.45));
 }
 .tagline .over{
   position:absolute; z-index:2;
@@ -211,8 +211,16 @@ a{color:inherit;text-decoration:none}
   color:#fff; font-weight:900; font-size:52px; line-height:.95; letter-spacing:.5px;
   text-shadow:0 12px 30px rgba(0,0,0,.35);
 }
-@media (max-width: 900px){
+.tagline .over--slogan{
+  right:16px; bottom:16px; left:auto; text-align:right;
+  font-size: clamp(22px, 3.1vw, 38px);
+  line-height: 1.02; letter-spacing:.5px;
+  max-width: 70%;
+}
+@media (max-width: 980px){
+  .tagline{ max-width:none; }
   .tagline .over{ font-size:38px; left:12px; bottom:12px; }
+  .tagline .over--slogan{ right:12px; bottom:12px; font-size: clamp(20px, 6vw, 32px); }
 }
 
 /* 4) H1 visible (was blending/hidden under header) */
@@ -220,8 +228,33 @@ a{color:inherit;text-decoration:none}
 .hero h1{ color:#0c1520 !important; } /* ensure dark on light bg */
 .hero p{ color:#35506a; }             /* readable lead on gradient */
 
-.btn{display:inline-block;padding:.75rem 1.1rem;border:1px solid #1b2330;border-radius:12px;background:#12161e;color:#e8eef7;font-weight:700}
-.btn.secondary{background:transparent}
+.hero-inner{
+  display:grid; gap:26px; align-items:center; padding:48px 0;
+  grid-template-columns: 1.25fr .85fr;
+}
+@media (max-width: 980px){ .hero-inner{ grid-template-columns:1fr; } }
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:.75rem 1.1rem;
+  border:1px solid #1b2330;
+  border-radius:12px;
+  background:#12161e;
+  color:#e8eef7;
+  font-weight:700;
+  text-decoration:none;
+}
+.btn:hover{ filter:brightness(1.1); }
+
+/* Make secondary a solid accent rather than transparent */
+.btn.secondary{
+  background: var(--accent, #35d0b6);
+  border-color: var(--accent, #35d0b6);
+  color:#081b29; /* dark text for contrast */
+}
+.btn.secondary:hover{ filter:brightness(1.05); }
+
 
 /* === Hero slideshow === */
 .hero-carousel { position: relative; }

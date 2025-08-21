@@ -63,96 +63,82 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <h1>Stream Freely. Skip Wisely.</h1>
-          <p class="lead">SmartSkips adds <strong>Family Mode</strong> to your player: we score scenes, build a skip-map, and the player enforces the policy — Mild, Strict, or Custom.</p>
-          <div class="actions">
-            <a class="btn" href="#demo">View teaser</a>
-            <a class="btn secondary" href="../../contact/index.html">Request a demo</a>
-          </div>
-        </div>
-        <div class="tagline">
-          <img src="assets/ott-hero.jpg" alt="Streaming preview (placeholder)">
-          <div class="over">SMART<br>SKIPS</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+
+      <!-- LEFT: page heading + user-centric lead -->
+      <div>
+        <h1>SmartSkips</h1>
+        <p class="lead">
+        Family Mode for your player: we build a skip-map from your policy and the player enforces it — Mild, Strict, or Custom.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#demo">Watch demo</a>
+          <a class="btn secondary" href="../../contact/index.html">Request a demo</a>
         </div>
       </div>
-    </section>
 
-    <!-- DEMO (tabs) -->
-    <section id="demo" class="container" style="padding:32px 0">
-      <div class="card" style="padding:0">
-        <div class="tabs" role="tablist" aria-label="Demo">
-          <button class="tab active" data-target="#pane-teaser" aria-selected="true">Teaser</button>
-          <button class="tab" data-target="#pane-raw" aria-selected="false">Raw</button>
-        </div>
-
-        <div id="pane-teaser" class="pane" role="tabpanel">
-          <video controls preload="metadata" poster="assets/teaser-poster.jpg">
-            <!-- Replace with your teaser MP4 or signed URL -->
-            <source src="assets/teaser.mp4" type="video/mp4" />
-            Sorry, your browser doesn’t support HTML5 video.
-          </video>
-          <p class="hint muted" style="margin-top:8px">Replace the video source with your teaser file or signed URL.</p>
-        </div>
-
-        <div id="pane-raw" class="pane" role="tabpanel" style="display:none">
-          <video controls preload="metadata" poster="assets/raw-poster.jpg">
-            <!-- Replace with your raw MP4 or signed URL -->
-            <source src="assets/raw.mp4" type="video/mp4" />
-          </video>
-          <p class="hint muted" style="margin-top:8px">Raw clip for comparison (no filtering).</p>
-        </div>
+      <!-- RIGHT: image + slogan -->
+      <div class="tagline">
+        <img src="../../assets/ss.jpg" alt="">
+        <div class="over over--slogan">Stream Freely.<br>Skip Wisely.</div>
       </div>
-    </section>
 
-    <!-- FEATURES -->
-    <section class="container" style="padding:20px 0 8px">
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Profiles</h3>
-          <p>Mild, Strict, and Custom thresholds — choose once, let the player enforce it.</p>
-        </div>
-        <div class="card">
-          <h3>Policy-driven</h3>
-          <p>Deterministic rules (per label & confidence), so reviews are explainable.</p>
-        </div>
-        <div class="card">
-          <h3>Drop-in integration</h3>
-          <p>FFmpeg trims or skip-map playback. No re-encoding required to pilot.</p>
-        </div>
-        <div class="card">
-          <h3>Auditability</h3>
-          <p>Timeline markers and logs help you review exactly what was skipped and why.</p>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="container" style="padding:24px 0 8px">
-      <h2 class="h2">How it works</h2>
-      <div class="grid grid-3" style="margin-top:10px">
-        <div class="card"><h3>1) Ingest</h3><p>Video in, scene boundaries optional.</p></div>
-        <div class="card"><h3>2) Score</h3><p>Labels + confidence per scene (e.g., moderation).</p></div>
-        <div class="card"><h3>3) Rules</h3><p>Profile thresholds map labels → skip decisions.</p></div>
-        <div class="card"><h3>4) Skip-map</h3><p>We emit a time-indexed skip plan.</p></div>
-        <div class="card"><h3>5) Playback</h3><p>Player enforces Family Mode on the fly.</p></div>
-      </div>
-    </section>
+  <!-- DEMO (renamed tabs; no technical wording) -->
+  <section id="demo" class="container" style="padding:32px 0">
+  <div class="card" style="padding:16px">
+    <video controls preload="metadata"
+           poster="assets/sample-poster.jpg"
+           style="width:100%;max-height:520px;border-radius:14px;border:1px solid #2a3342;background:#000">
+      <!-- Replace with your single demo clip (or signed URL) -->
+      <source src="assets/sample.mp4" type="video/mp4" />
+      Sorry, your browser doesn’t support HTML5 video.
+    </video>
+    <p class="hint muted" style="margin-top:8px">
+      Replace with your demo clip or signed URL.
+    </p>
+  </div>
+</section>
 
-    <!-- CTA -->
-    <section class="container" style="padding:32px 0 44px">
-      <div class="card inline">
-        <div>
-          <h3 style="margin:0 0 6px">Fast to pilot</h3>
-          <p class="muted" style="margin:0">Start with the API and your current player. No app rewrite.</p>
-        </div>
-        <a class="btn" href="../../contact/index.html">Request a demo</a>
+
+  <!-- FEATURES (benefits only, no internals) -->
+  <section class="container" style="padding:20px 0 8px">
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Comfort profiles</h3>
+        <p>Choose Mild, Strict, or Custom. One setting, consistent viewing across shows and devices.</p>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <h3>Viewer controls</h3>
+        <p>Simple on/off options and quick adjustments—parents stay in charge without micro-managing.</p>
+      </div>
+      <div class="card">
+        <h3>Fits your player</h3>
+        <p>Works with your current app and streaming stack. No app redesign needed to pilot.</p>
+      </div>
+      <div class="card">
+        <h3>Clear roll-out</h3>
+        <p>Start small, learn quickly, and launch with confidence—backed by usage insights and feedback loops.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container" style="padding:32px 0 44px">
+    <div class="card inline">
+      <div>
+        <h3 style="margin:0 0 6px">Ready to try it?</h3>
+        <p class="muted" style="margin:0">We’ll help you pick a pilot, wire it up, and measure the impact.</p>
+      </div>
+      <a class="btn" href="../../contact/index.html">Request a demo</a>
+    </div>
+  </section>
+</main>
+
 
   <!-- FOOTER (same as the rest of the site) -->
   <footer class="site-footer">
