@@ -172,4 +172,56 @@ a{color:inherit;text-decoration:none}
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
 
+/* === Landing page fixes === */
+
+/* 1) Four boxes align in one row on desktop, 2x2 on tablet */
+.solutions-grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+@media (min-width: 1024px){
+  .solutions-grid{ grid-template-columns:repeat(4,1fr); }
+}
+/* equal heights */
+.solutions-grid .card{ height:100%; display:flex; flex-direction:column; }
+
+/* 2 & 3) Tagline image + "UNLOCK SIMPLICITY" overlay stays inside box */
+.tagline{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  background:#0c1520; /* fallback */
+  aspect-ratio: 16/10; /* control the box */
+}
+.tagline img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:12px;
+}
+/* subtle darken overlay so text pops */
+.tagline::after{
+  content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.45));
+}
+.tagline .over{
+  position:absolute; z-index:2;
+  left:16px; bottom:16px;
+  color:#fff; font-weight:900; font-size:52px; line-height:.95; letter-spacing:.5px;
+  text-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+@media (max-width: 900px){
+  .tagline .over{ font-size:38px; left:12px; bottom:12px; }
+}
+
+/* 4) H1 visible (was blending/hidden under header) */
+.hero{ padding-top: 16px; }           /* avoid sticky-header overlap */
+.hero h1{ color:#0c1520 !important; } /* ensure dark on light bg */
+.hero p{ color:#35506a; }             /* readable lead on gradient */
+
+.btn{display:inline-block;padding:.75rem 1.1rem;border:1px solid #1b2330;border-radius:12px;background:#12161e;color:#e8eef7;font-weight:700}
+.btn.secondary{background:transparent}
+
+
 
