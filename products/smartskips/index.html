@@ -1,195 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>SmartSkips — A HazeCraft Product</title>
-  <meta name="description" content="SmartSkips by HazeCraft Tech — AI-powered Family Mode for OTT: skip sensitive scenes seamlessly without re-encoding or new apps.">
-  <!-- Typography (Inter + Merriweather) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <!-- Make all relative links resolve from /hazecrafttech/ -->
   <base href="/hazecrafttech/">
-  <link rel="stylesheet" href="assets/styles.css"/>
+
+  <meta charset="utf-8" />
+  <title>SmartSkips — HazeCraft Tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SmartSkips: Family Mode filtering for streaming. Scene scoring, skip-maps, and a player hook for safe playback." />
+
+  <!-- Your global styles + (optional) fonts you've added -->
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Minimal page-local styles (tabs + small tweaks) -->
+  <style>
+    .btn { display:inline-block; padding:.75rem 1.1rem; border:1px solid #1b2330; border-radius:12px; background:#12161e; color:#e8eef7; font-weight:700 }
+    .btn.secondary { background:transparent }
+    .tabs{display:flex;gap:8px;padding:10px;border-bottom:1px solid #2a3342}
+    .tab{padding:.6rem .9rem;border:1px solid #2a3342;border-radius:10px;background:#0f141c;color:#e8eef7;cursor:pointer}
+    .tab.active{background:#131b25;border-color:#35455f}
+    .pane{padding:16px}
+    video{width:100%;max-height:520px;border-radius:14px;border:1px solid #2a3342;background:#000}
+    .hero .actions{display:flex;gap:10px;margin-top:14px}
+    .card.inline{display:flex;gap:16px;justify-content:space-between;align-items:center}
+    .muted{color:#9fb0c8}
+  </style>
 </head>
 <body>
+
+  <!-- HEADER (same as the rest of the site) -->
   <header class="site-header">
-  <div class="container navbar stack">
-    <a href="index.html" class="brand">Haze<span>Craft</span></a>
+    <div class="container navbar stack">
+      <a href="index.html" class="brand">Haze<span>Craft</span></a>
 
-    <button class="menu-toggle" data-nav-toggle aria-label="Open menu">☰</button>
+      <button class="menu-toggle" data-nav-toggle aria-label="Open menu">☰</button>
 
-    <nav class="nav" data-nav>
-      <div class="menu">
-        <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Solutions ▾</button>
-        <div class="menu-panel" role="menu">
-          <div class="menu-list">
-            <a class="menu-item" href="solutions/ai.html">
-              <strong>AI Solutions</strong>
-              <small>Vision, moderation, and automation to cut toil & risk.</small>
-            </a>
-            <a class="menu-item" href="solutions/networking.html">
-              <strong>Networking</strong>
-              <small>Azure hub/spoke, ER, BGP, firewalls, zero-trust patterns.</small>
-            </a>
-            <a class="menu-item" href="solutions/cloud.html">
-              <strong>Cloud</strong>
-              <small>Landing zones, CNI/AKS, IaC with Terraform & ADO.</small>
-            </a>
-            <a class="menu-item" href="solutions/ott-media.html">
-              <strong>OTT / Media</strong>
-              <small>SmartSkips “Family Mode” filtering & playback SDK.</small>
-            </a>
+      <nav class="nav" data-nav>
+        <div class="menu">
+          <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Solutions ▾</button>
+          <div class="menu-panel" role="menu">
+            <div class="menu-list">
+              <a class="menu-item" href="solutions/ai.html"><strong>AI Solutions</strong><small>Vision, moderation, pipelines.</small></a>
+              <a class="menu-item" href="solutions/networking.html"><strong>Networking</strong><small>Hub/spoke, ER/BGP, NVAs.</small></a>
+              <a class="menu-item" href="solutions/cloud.html"><strong>Cloud</strong><small>Landing zones, AKS, Terraform + ADO.</small></a>
+              <a class="menu-item" href="solutions/ott-media.html"><strong>OTT / Media</strong><small>Family Mode filtering & player SDK.</small></a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="menu">
-        <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Products ▾</button>
-        <div class="menu-panel" role="menu">
-          <div class="menu-list">
-            <a class="menu-item" href="products/index.html">
-              <strong>SmartSkips</strong>
-              <small>Scene scoring + skip-map engine with profiles.</small>
-            </a>
-            <a class="menu-item" href="products/smartskips/index.html">
-              <strong>Player Demo</strong>
-              <small>React player with Family Mode & toggles.</small>
-            </a>
+        <div class="menu">
+          <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Products ▾</button>
+          <div class="menu-panel" role="menu">
+            <div class="menu-list">
+              <a class="menu-item" href="products/index.html"><strong>SmartSkips</strong><small>Scene scoring + skip-map engine.</small></a>
+              <a class="menu-item" href="products/smartskips/index.html"><strong>Player Demo</strong><small>Family Mode with profiles.</small></a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <a href="contact/index.html">Contact</a>
-    </nav>
-  </div>
-</header>
+        <a href="contact/index.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-
-  <main class="container">
+  <main>
+    <!-- HERO -->
     <section class="hero">
-      <h1>Stream Freely. <span class="fade">Skip Wisely.</span></h1>
-      <p class="lead">
-        SmartSkips is an AI-powered Family Mode for streaming platforms.
-        It automatically skips sensitive scenes while keeping the story flowing —
-        no re-encoding, no manual review, no new app for your users.
-      </p>
-      <div class="chips">
-        <span class="chip">
-          <svg class="chip-ico" viewBox="0 0 24 24" fill="none" stroke="#aeb3ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="8" cy="8" r="3"></circle><circle cx="16" cy="8" r="3"></circle>
-            <path d="M2 20c0-3 4-5 6-5s6 2 6 5"></path>
-            <path d="M14 20c0-2 3-4 5-4 1.2 0 2.4.4 3 1"></path>
-          </svg>
-          Profiles: Mild · Strict · Custom
-        </span>
-        <span class="chip">
-          <svg class="chip-ico" viewBox="0 0 24 24" fill="none" stroke="#a3d3ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h12l4 4v12H4z"/><path d="M16 4v4h4"/>
-            <path d="M7 14h10M7 10h6M7 18h6"/>
-          </svg>
-          Policy-driven
-        </span>
-        <span class="chip">
-          <svg class="chip-ico" viewBox="0 0 24 24" fill="none" stroke="#c1c7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="14" rx="2"/>
-            <path d="M8 21h8M10 17h4"/>
-          </svg>
-          Drop-in integration
-        </span>
-        <span class="chip">
-          <svg class="chip-ico" viewBox="0 0 24 24" fill="none" stroke="#c1c7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z"/>
-          </svg>
-          Works with your player
-        </span>
-      </div>
-
-      <div class="cta-row" style="margin-top:12px">
-        <a class="btn cta" href="#contact">Book a demo</a>
+      <div class="container hero-inner">
+        <div>
+          <h1>Stream Freely. Skip Wisely.</h1>
+          <p class="lead">SmartSkips adds <strong>Family Mode</strong> to your player: we score scenes, build a skip-map, and the player enforces the policy — Mild, Strict, or Custom.</p>
+          <div class="actions">
+            <a class="btn" href="#demo">View teaser</a>
+            <a class="btn secondary" href="contact/index.html">Request a demo</a>
+          </div>
+        </div>
+        <div class="tagline">
+          <img src="assets/ott-hero.jpg" alt="Streaming preview (placeholder)">
+          <div class="over">SMART<br>SKIPS</div>
+        </div>
       </div>
     </section>
 
-    <section class="panel" id="demo">
-      <div class="panel-head">
-        <h2 class="h4">See it in action</h2>
-        <div class="tabs">
-          <button class="tab active" data-target="#teaserPane">Teaser</button>
-          <button class="tab" data-target="#rawPane">Raw screen-capture</button>
+    <!-- DEMO (tabs) -->
+    <section id="demo" class="container" style="padding:32px 0">
+      <div class="card" style="padding:0">
+        <div class="tabs" role="tablist" aria-label="Demo">
+          <button class="tab active" data-target="#pane-teaser" aria-selected="true">Teaser</button>
+          <button class="tab" data-target="#pane-raw" aria-selected="false">Raw</button>
         </div>
-      </div>
 
-      <div id="teaserPane" class="pane" style="display:block">
-        <video controls playsinline preload="metadata" poster="assets/teaser-poster.jpg"
-               class="player" controlsList="nodownload">
-          <source src="TEASER_SIGNED_URL.mp4" type="video/mp4"/>
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
+        <div id="pane-teaser" class="pane" role="tabpanel">
+          <video controls preload="metadata" poster="assets/teaser-poster.jpg">
+            <!-- Replace with your teaser MP4 or signed URL -->
+            <source src="assets/teaser.mp4" type="video/mp4" />
+            Sorry, your browser doesn’t support HTML5 video.
+          </video>
+          <p class="hint muted" style="margin-top:8px">Replace the video source with your teaser file or signed URL.</p>
+        </div>
 
-      <div id="rawPane" class="pane">
-        <video controls playsinline preload="metadata" poster="assets/raw-poster.jpg"
-               class="player" controlsList="nodownload">
-          <source src="RAW_SIGNED_URL.mp4" type="video/mp4"/>
-        </video>
-        <p class="micro muted" style="margin-top:8px">Watermark recommended. Use expiring signed URLs.</p>
+        <div id="pane-raw" class="pane" role="tabpanel" style="display:none">
+          <video controls preload="metadata" poster="assets/raw-poster.jpg">
+            <!-- Replace with your raw MP4 or signed URL -->
+            <source src="assets/raw.mp4" type="video/mp4" />
+          </video>
+          <p class="hint muted" style="margin-top:8px">Raw clip for comparison (no filtering).</p>
+        </div>
       </div>
     </section>
 
-    <section class="grid">
-      <div class="card">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#9fdcff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z"/>
-          <path d="M8.5 12.5l2.5 2.5 4.5-4.5"/>
-        </svg>
-        <h3 class="h5">Protect your brand & audience</h3>
-        <p class="muted">Deliver a family-safe mode instantly without splitting your catalog or adding editorial overhead.</p>
-      </div>
-      <div class="card">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#c9d1ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="7" width="18" height="10" rx="2"/>
-          <path d="M10 9l6 3-6 3z"/>
-        </svg>
-        <h3 class="h5">Frictionless viewer experience</h3>
-        <p class="muted">Seamless skips that don’t break the story. Simple profile switch: Mild · Strict · Custom.</p>
-      </div>
-      <div class="card">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#b4f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 13l5 1 6-6-1-5-6 6-1 4z"/><path d="M14 9l1 6 5 1"/>
-        </svg>
-        <h3 class="h5">Fast to pilot</h3>
-        <p class="muted">Start with our API and your existing player workflow. No re-encoding, no app changes.</p>
+    <!-- FEATURES -->
+    <section class="container" style="padding:20px 0 8px">
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Profiles</h3>
+          <p>Mild, Strict, and Custom thresholds — choose once, let the player enforce it.</p>
+        </div>
+        <div class="card">
+          <h3>Policy-driven</h3>
+          <p>Deterministic rules (per label & confidence), so reviews are explainable.</p>
+        </div>
+        <div class="card">
+          <h3>Drop-in integration</h3>
+          <p>FFmpeg trims or skip-map playback. No re-encoding required to pilot.</p>
+        </div>
+        <div class="card">
+          <h3>Auditability</h3>
+          <p>Timeline markers and logs help you review exactly what was skipped and why.</p>
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT PANEL -->
-    <section class="panel" id="contact">
-      <h2 class="h5">Send a message</h2>
-      <form action="https://formspree.io/f/yourID" method="POST" class="contact-form" data-ajax>
-        <div class="row">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="_replyto" placeholder="Email" required>
+    <!-- HOW IT WORKS -->
+    <section class="container" style="padding:24px 0 8px">
+      <h2 class="h2">How it works</h2>
+      <div class="grid grid-3" style="margin-top:10px">
+        <div class="card"><h3>1) Ingest</h3><p>Video in, scene boundaries optional.</p></div>
+        <div class="card"><h3>2) Score</h3><p>Labels + confidence per scene (e.g., moderation).</p></div>
+        <div class="card"><h3>3) Rules</h3><p>Profile thresholds map labels → skip decisions.</p></div>
+        <div class="card"><h3>4) Skip-map</h3><p>We emit a time-indexed skip plan.</p></div>
+        <div class="card"><h3>5) Playback</h3><p>Player enforces Family Mode on the fly.</p></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container" style="padding:32px 0 44px">
+      <div class="card inline">
+        <div>
+          <h3 style="margin:0 0 6px">Fast to pilot</h3>
+          <p class="muted" style="margin:0">Start with the API and your current player. No app rewrite.</p>
         </div>
-        <textarea name="message" placeholder="How can we help?" required></textarea>
-        <input type="hidden" name="context" value="SmartSkips / Landing">
-        <button type="submit" class="btn">Send Message</button>
-        <div class="notice ok hidden">Thanks! We’ll reply to your email.</div>
-        <div class="notice err hidden">Hmm, couldn’t send. Email us at
-          <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>.
-        </div>
-      </form>
-      <p class="micro muted" style="margin-top:8px">
-        Prefer email? <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>
-      </p>
+        <a class="btn" href="contact/index.html">Request a demo</a>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <span class="muted">© <span id="year"></span> HazeCraft Tech Inc.</span>
-    <a href="mailto:connect@hazecrafttech.com" class="muted">connect@hazecrafttech.com</a>
+  <!-- FOOTER (same as the rest of the site) -->
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="y"></span> HazeCraft Tech Inc • <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>
+    </div>
   </footer>
 
-
-  <script src="assets/app.js"></script>
+  <!-- Global scripts + tiny tabs script -->
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="assets/app.js" defer></script>
+  <script>
+    // Simple tabs (page-local; safe if app.js is missing)
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab');
+      const panes = document.querySelectorAll('.pane');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+          panes.forEach(p => p.style.display = 'none');
+          tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+          const pane = document.querySelector(tab.dataset.target);
+          if (pane) pane.style.display = 'block';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
