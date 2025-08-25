@@ -77,9 +77,6 @@ p { font-size: var(--fs-400); margin: 0 0 1rem; color: var(--fg, #cfd9ea); }
   display: inline-block;
 }
 
-.brand span {
-  color: #fff;                /* different color for "Craft" */
-}
 
 /* Normalize nav link + dropdown button typography */
 .nav>a,
