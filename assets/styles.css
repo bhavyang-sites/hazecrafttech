@@ -352,6 +352,14 @@ main{ flex:1 0 auto; }         /* pushes footer down when content is short */
 /* Optional: reduce excess bottom padding on the final section */
 main > section:last-of-type{ padding-bottom:24px; }
 
+/* Make brand a touch bigger and align nicely */
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo,.brand-logo-text{display:block}
+.brand-logo{height:30px}
+.brand-logo-text{height:28px}
+.navbar{height:72px}
+
+
 
 
 
