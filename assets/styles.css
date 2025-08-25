@@ -61,12 +61,24 @@ p { font-size: var(--fs-400); margin: 0 0 1rem; color: var(--fg, #cfd9ea); }
 
 /* Nav + brand polish */
 /* Brand size */
-.brand{
-  font-family: var(--font-sans);
-  font-weight: var(--w-bold);
-  letter-spacing:.2px;
-  font-size: clamp(22px, 1.8vw, 28px); /* bigger logo text */
-  line-height:1;
+.brand {
+  display: flex;              /* put logo + text in a row */
+  align-items: center;        /* vertical centering */
+  text-decoration: none;      /* remove link underline */
+  font-size: 1.5rem;          /* adjust text size */
+  font-weight: 600;           /* bold enough for brand */
+  color: #00c3aa;             /* your teal color */
+}
+
+.brand-logo {
+  height: 32px;               /* match desired size */
+  width: auto;                /* keep aspect ratio */
+  margin-right: 8px;          /* space between logo and text */
+  display: inline-block;
+}
+
+.brand span {
+  color: #fff;                /* different color for "Craft" */
 }
 
 /* Normalize nav link + dropdown button typography */
