@@ -11,6 +11,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="description" content="Azure hub/spoke, ER, BGP, NVAs, Azure Firewall, DNS.">
+
+<style>
+  /* keep hero columns aligned and responsive */
+  .hero-inner{ display:flex; align-items:flex-start; gap:32px; flex-wrap:wrap; }
+  .hero-inner > div{ flex:1 1 420px; }
+  .hero-inner .tagline{ flex:0 1 560px; margin-top:0; }
+
+  /* horizontal card row below hero */
+  .grid-4{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(220px,1fr));
+    gap:16px;
+  }
+  @media (max-width:1200px){ .grid-4{ grid-template-columns:repeat(2, minmax(260px,1fr)); } }
+  @media (max-width:640px){ .grid-4{ grid-template-columns:1fr; } }
+
+  /* tighter section spacing */
+  .section-tight{ padding:16px 0; }
+</style>
 </head><body>
 
 <!-- HEADER -->
@@ -68,26 +87,33 @@
   </div>
 </header>
 
-
-
 <main>
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
       <div>
         <h1>Cloud networks without surprises</h1>
         <p>Designs that survive prod: ER + Gateway, UDR flows via NVAs, asymmetric path fixes, DNS Private Resolver, and controlled egress.</p>
-        <div class="grid grid-2" style="margin-top:18px">
-          <div class="card"><h3>Hub/Spoke + ER</h3><p>BGP route propagation and deterministic flows for hybrid.</p></div>
-          <div class="card"><h3>Security</h3><p>vSRX/AFW policies, NAT strategies, and logging/analytics.</p></div>
-        </div>
+        <!-- NEW paragraphs below the intro -->
+        <p>We build deterministic paths with clear policy points, so routing and NAT outcomes are predictable across hub, spokes, and on-prem. No mystery hops, no accidental bypasses.</p>
+        <p>From Day-1 observability to change-safe rollouts, our patterns help ops teams troubleshoot quickly while keeping security owners confident and auditors satisfied.</p>
       </div>
+
       <div class="tagline tile3">
         <img src="../assets/networking.jpg" alt="">
         <div class="over">
           <span class="unlock">PLAN</span><br>
           <span class="simplicity">THE PATH</span>
         </div>
-      
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVED cards: now a horizontal row below the tile -->
+  <section class="container section-tight">
+    <div class="grid-4">
+      <div class="card"><h3>Hub/Spoke + ER</h3><p>BGP route propagation and deterministic flows for hybrid.</p></div>
+      <div class="card"><h3>Security</h3><p>vSRX/AFW policies, NAT strategies, and logging/analytics.</p></div>
     </div>
   </section>
 </main>
