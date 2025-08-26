@@ -392,6 +392,29 @@ main > section:last-of-type{ padding-bottom:24px; }
   color: var(--light-on-dark) !important;
 }
 
+/* One-row features grid that wraps responsively */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* shrink section spacing so gaps feel tighter */
+.section-tight { padding: 12px 0; }
+.section-tight h2 { margin: 0 0 10px; }
+
+/* responsive fallbacks */
+@media (max-width: 1200px) {
+  .grid-4 { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+}
+@media (max-width: 640px) {
+  .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* keep the hero columns top-aligned (prevents tile “droop”) */
+.hero-inner { display:flex; align-items:flex-start; gap:32px; flex-wrap:wrap; }
+.hero-inner > div { flex:1 1 420px; }
+.hero-inner .tagline { flex:0 1 560px; margin-top:0; }
 
 
 
