@@ -339,6 +339,15 @@ a{color:inherit;text-decoration:none}
 
 .unlock { color: #00e0ff; }
 .simplicity { color: #ffffff; }
+
+.tile1 .unlock { color: #00e0ff; }
+.tile2 .unlock { color: #ffa500; }
+.tile3 .unlock { color: #00cc99; }
+.tile4 .unlock { color: #ff0055; }
+.tile5 .unlock { color: #ffc107; }
+
+/* etc. */
+
 /* Sticky footer layout */
 html, body{ height:100%; }
 body{
