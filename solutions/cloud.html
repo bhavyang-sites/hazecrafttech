@@ -11,6 +11,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="description" content="Landing zones, AKS (Azure CNI), IaC with Terraform & ADO.">
+
+<style>
+  /* Align hero columns & keep responsive */
+  .hero-inner{ display:flex; align-items:flex-start; gap:32px; flex-wrap:wrap; }
+  .hero-inner > div{ flex:1 1 420px; }
+  .hero-inner .tagline{ flex:0 1 560px; margin-top:0; }
+
+  /* 4-up card row below hero */
+  .grid-4{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(220px,1fr));
+    gap:16px;
+  }
+  @media (max-width:1200px){ .grid-4{ grid-template-columns:repeat(2, minmax(260px,1fr)); } }
+  @media (max-width:640px){ .grid-4{ grid-template-columns:1fr; } }
+
+  /* tighter section spacing */
+  .section-tight{ padding:16px 0; }
+</style>
 </head><body>
 
 <!-- HEADER -->
@@ -68,26 +87,43 @@
   </div>
 </header>
 
-
-
-
 <main>
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
       <div>
         <h1>Ship faster, safely</h1>
         <p>IaC-first environments, private/public AKS, ACR integration, Log Analytics, and cost controls wired from day one.</p>
-        <div class="grid grid-2" style="margin-top:18px">
-          <div class="card"><h3>Terraform + ADO</h3><p>Pipelines, approvals, drift checks, modular repos.</p></div>
-          <div class="card"><h3>Observability</h3><p>LA + diagnostics + budgets for accountable ops.</p></div>
-        </div>
       </div>
+
       <div class="tagline tile2">
         <img src="../assets/cloud.jpg" alt="">
         <div class="over">
           <span class="unlock">STRONG</span><br>
           <span class="simplicity">FOUNDATIONS</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-up cards below the tile -->
+  <section class="container section-tight">
+    <div class="grid-4">
+      <div class="card">
+        <h3>Landing Zones</h3>
+        <p>Guardrail-first subscriptions, identity, policies, and baselines to keep teams moving without breaking rules.</p>
+      </div>
+      <div class="card">
+        <h3>AKS (Azure CNI)</h3>
+        <p>Private/public clusters with ACR, node pools, network policies, and sane defaults for day-2 operations.</p>
+      </div>
+      <div class="card">
+        <h3>Terraform + ADO</h3>
+        <p>Pipelines, approvals, drift detection, and modular repos so infra changes are reviewable and repeatable.</p>
+      </div>
+      <div class="card">
+        <h3>Observability & Budgets</h3>
+        <p>Log Analytics, diagnostic settings, alerts, and cost guardrails that make ownership visible from day one.</p>
       </div>
     </div>
   </section>
