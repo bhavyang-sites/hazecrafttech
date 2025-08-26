@@ -36,6 +36,7 @@
   --fs-500: 1.0625rem;                             /* body lg */
   --fs-400: 1rem;                                  /* body */
   --fs-300: .9375rem;                              /* small */
+  --light-on-dark: #e9fbf7; /* same as your light page background */
 }
 
 /* Base */
@@ -360,6 +361,20 @@ main{ flex:1 0 auto; }         /* pushes footer down when content is short */
 
 /* Optional: reduce excess bottom padding on the final section */
 main > section:last-of-type{ padding-bottom:24px; }
+
+/* Make text inside dark surfaces match the site's light background color */
+.card,
+.card h1, .card h2, .card h3,
+.card p, .card small, .card li,
+.form-card,
+.form-card h1, .form-card h2, .form-card h3,
+.form-card p, .form-card small,
+.site-footer, .site-footer a,
+.menu-panel, .menu-panel .menu-item strong, .menu-panel .menu-item small,
+.tagline .over {
+  color: var(--light-on-dark) !important;
+}
+
 
 
 
