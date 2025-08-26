@@ -268,11 +268,28 @@ a{color:inherit;text-decoration:none}
 .hero h1{ color:#0c1520 !important; } /* ensure dark on light bg */
 .hero p{ color:#35506a; }             /* readable lead on gradient */
 
-.hero-inner{
+/* .hero-inner{
   display:grid; gap:26px; align-items:center; padding:48px 0;
   grid-template-columns: 1.25fr .85fr;
 }
-@media (max-width: 980px){ .hero-inner{ grid-template-columns:1fr; } }
+@media (max-width: 980px){ .hero-inner{ grid-template-columns:1fr; } } */
+
+/* Make hero columns align at the top, not vertically centered */
+.hero-inner{
+  display:flex;
+  align-items:flex-start;   /* <-- key change */
+  justify-content:space-between;
+  gap:32px;
+  flex-wrap:wrap;           /* keeps it responsive */
+}
+
+/* sensible sizing so the tile doesn’t stretch oddly */
+.hero-inner > div{ flex:1 1 420px; }
+.hero-inner .tagline{ flex:0 1 560px; margin-top:0; }
+@media (max-width:900px){
+  .hero-inner{ flex-direction:column; }
+  .hero-inner .tagline{ width:100%; }
+}
 
 /* Buttons */
 .btn{
