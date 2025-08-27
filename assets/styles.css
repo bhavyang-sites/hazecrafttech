@@ -448,8 +448,24 @@ main > section:last-of-type{ padding-bottom:24px; }
 }
 #demo h2 {
   text-align: center;
-  margin: 45px 0 3px; /* top, sides, bottom */
+  margin: 40px 0 16px; /* top, sides, bottom */
 }
+
+.video-wrapper {
+  position: relative;
+  max-width: 720px;      /* YouTube-ish width */
+  margin: 0 auto;        /* center it */
+  aspect-ratio: 16/9;    /* keep proportions */
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 1px solid #2a3342;
+  background: #000;
+}
+
 
 
 
