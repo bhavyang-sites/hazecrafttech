@@ -446,6 +446,11 @@ main > section:last-of-type{ padding-bottom:24px; }
   margin: 0 auto;
   display: block;
 }
+#demo h2 {
+  text-align: center;
+  margin: 40px 0 16px; /* top, sides, bottom */
+}
+
 
 
 
