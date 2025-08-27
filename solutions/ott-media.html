@@ -11,6 +11,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="description" content="SmartSkips Family Mode: scene scoring + safe playback.">
+
+<style>
+  /* Align hero columns and keep responsive */
+  .hero-inner{ display:flex; align-items:flex-start; gap:32px; flex-wrap:wrap; }
+  .hero-inner > div{ flex:1 1 420px; }
+  .hero-inner .tagline{ flex:0 1 560px; margin-top:0; }
+
+  /* 3-up card row below hero */
+  .grid-3-fixed{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(240px,1fr));
+    gap:16px;
+  }
+  @media (max-width:1024px){ .grid-3-fixed{ grid-template-columns:repeat(2, minmax(260px,1fr)); } }
+  @media (max-width:640px){ .grid-3-fixed{ grid-template-columns:1fr; } }
+
+  /* tighter spacing so the section hugs the hero nicely */
+  .section-tight{ padding:16px 0; }
+
+  /* CTA link inside the third card – visually clear it’s clickable,
+     while the other two cards remain read-only */
+  .card-cta a.inline-cta{
+    display:inline-block;
+    margin-top:10px;
+    font-weight:600;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:10px;
+    border:1px solid var(--ring, #2a3342);
+    background: rgba(255,255,255,0.06);
+  }
+  .card-cta a.inline-cta:hover{
+    transform: translateY(-1px);
+  }
+</style>
 </head><body>
 
 <!-- HEADER -->
@@ -69,22 +104,54 @@
 </header>
 
 <main>
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
       <div>
         <h1>Family-friendly streaming</h1>
         <p>Drop-in filtering profiles, skip-maps, and a Player SDK that enforces policy in real time—without slowing the stream.</p>
-        <div class="grid grid-2" style="margin-top:18px">
-          <div class="card"><h3>Profiles</h3><p>Mild, Strict, Custom with explainability for audits.</p></div>
-          <div class="card"><h3>Integrations</h3><p>FFmpeg trims, React player hooks, CDN-friendly outputs.</p></div>
-        </div>
       </div>
+
       <div class="tagline tile4">
         <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="">
         <div class="over">
           <span class="unlock">SMART</span><br>
           <span class="simplicity">SKIPS</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 cards below the tile -->
+  <section class="container section-tight">
+    <div class="grid-3-fixed">
+      <!-- Read-only card -->
+      <div class="card">
+        <h3>Profiles</h3>
+        <p>
+          Built-in <strong>Mild</strong> and <strong>Strict</strong> modes plus <strong>Custom</strong> policies you define.
+          Clear labels and rationales help stakeholders understand what was filtered and why—useful for reviews and audits.
+        </p>
+      </div>
+
+      <!-- Read-only card -->
+      <div class="card">
+        <h3>Integrations</h3>
+        <p>
+          Works with your existing pipeline: player-side hooks for toggles, CDN-friendly outputs, and
+          deployment patterns that fit both browser and TV platforms—without locking you to a specific vendor.
+        </p>
+      </div>
+
+      <!-- Clickable CTA card on the right -->
+      <div class="card card-cta">
+        <h3>See SmartSkips</h3>
+        <p>
+          Try our sample player with Family Mode to experience profile-based filtering in action.
+          Explore how skips feel during playback and how profiles change the outcome.
+        </p>
+        <a class="inline-cta" href="../products/smartskips/index.html">Open the Player Demo →</a>
+      </div>
     </div>
   </section>
 </main>
