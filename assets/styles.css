@@ -448,7 +448,7 @@ main > section:last-of-type{ padding-bottom:24px; }
 }
 #demo h2 {
   text-align: center;
-  margin: 40px 0 16px; /* top, sides, bottom */
+  margin: 45px 0 10px; /* top, sides, bottom */
 }
 
 
