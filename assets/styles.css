@@ -416,6 +416,12 @@ main > section:last-of-type{ padding-bottom:24px; }
 .hero-inner > div { flex:1 1 420px; }
 .hero-inner .tagline { flex:0 1 560px; margin-top:0; }
 
+#demo video {
+  max-width: 860px;  /* or 720px */
+  margin: 0 auto;
+  display: block;
+}
+
 
 
 
