@@ -102,7 +102,7 @@ if (carousel) {
   };
 
   const next = () => show((i + 1) % slides.length);
-  let timer = setInterval(next, 6000);
+  let timer = setInterval(next, 3000);
 
   // pause on hover/focus
   carousel.addEventListener('mouseenter', ()=> clearInterval(timer));
