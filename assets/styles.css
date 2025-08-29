@@ -470,6 +470,14 @@ main > section:last-of-type{ padding-bottom:24px; }
   border: 1px solid #2a3342;
   background: #000;
 }
+/* keep natural aspect ratio; scale to container width */
+.tiles img,
+.tile .thumb{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
 
 
 
