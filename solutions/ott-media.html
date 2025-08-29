@@ -1,6 +1,8 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><title>OTT / Media • HazeCraft Tech</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- add inside <head> before styles.css for no loading issue-->
+<link rel="preload" as="image" href="../assets/ott-hero.jpg" fetchpriority="high">
 <link rel="icon" href="../assets/HC.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/HC32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/HC180.png">
@@ -115,7 +117,14 @@
       </div>
 
       <div class="tagline tile4">
-        <img src="../assets/ott-hero.jpg" alt="">
+        <!-- replace the current hero image tag for no loading issue-->
+        <img
+          src="../assets/ott-hero.jpg"
+          alt="Unlock Simplicity"
+          decoding="sync"
+          fetchpriority="high"
+          style="opacity:1"
+        />
         <div class="over">
           <span class="unlock">SAFE</span><br>
           <span class="simplicity">STREAMING</span>

@@ -1,6 +1,7 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><title>Cloud • HazeCraft Tech</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" as="image" href="../assets/cloud.jpg" fetchpriority="high">
 <link rel="icon" href="../assets/HC.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/HC32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/HC180.png">
@@ -100,7 +101,14 @@
       </div>
 
       <div class="tagline tile2">
-        <img src="../assets/cloud.jpg" alt="">
+        <!-- for image to appear without loading-->
+        <img
+          src="../assets/cloud.jpg"
+          alt="Unlock Simplicity"
+          decoding="sync"
+          fetchpriority="high"
+          style="opacity:1"
+        />
         <div class="over">
           <span class="unlock">STRONG</span><br>
           <span class="simplicity">FOUNDATIONS</span>
