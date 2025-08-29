@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="preload" as="image" href="assets/ul-sp.jpg" fetchpriority="high">
   <link rel="icon" href="assets/HC.svg" type="image/svg+xml">
   <link rel="icon" href="assets/HC32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/HC180.png">
@@ -120,7 +121,14 @@
     <!-- RIGHT: image box with overlay -->
     
     <div class="tagline">
-      <img src="assets/ul-sp.jpg" alt="Unlock Simplicity">
+      <!-- replace the current hero image tag -->
+      <img
+        src="assets/ul-sp.jpg"
+        alt="Unlock Simplicity"
+        decoding="sync"
+        fetchpriority="high"
+        style="opacity:1"
+      />
       <div class="over">
         <span class="unlock">UNLOCK</span><br>
         <span class="simplicity">SIMPLICITY</span>
