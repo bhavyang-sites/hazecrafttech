@@ -37,11 +37,10 @@
 .case-study-card {
   background: linear-gradient(145deg, #161a20 0%, #0b0d10 100%);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: inset 4px 0 0 0 #00e5ff; /* Draws the blue line INSIDE the curve */
   border-radius: 12px; 
   padding: 0; 
   position: relative;
-  overflow: hidden; /* Ensures nothing bleeds outside the rounded corners */
+  overflow: hidden; 
 }
 
 /* The Scrolling Container */
@@ -52,19 +51,22 @@
 }
 
 /* Custom Professional Scrollbar */
+/* Custom Professional Scrollbar - Now the Cyan Accent */
 .case-study-content::-webkit-scrollbar {
-  width: 8px;
+  width: 4px; /* Matches the exact width of your old blue line */
 }
+
 .case-study-content::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 0 12px 12px 0;
+  background: transparent; /* Keeps the background clean */
 }
+
 .case-study-content::-webkit-scrollbar-thumb {
-  background: rgba(0, 229, 255, 0.2); /* Subtle cyan thumb */
-  border-radius: 4px;
+  background: #00e5ff; /* Solid HazeCraft cyan */
+  border-radius: 0px; /* Flat geometric edges to look like a strip */
 }
+
 .case-study-content::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 229, 255, 0.5); /* Brightens when they grab it */
+  background: #00b8cc; /* Darkens slightly when clicked/dragged */
 }
 
 .case-study-content ul {
