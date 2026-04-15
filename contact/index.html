@@ -5,7 +5,6 @@
 <link rel="icon" href="../assets/HC32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/HC180.png">
 <meta name="theme-color" content="#0b0d10">
-<!-- Typography (Inter + Merriweather) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
@@ -13,7 +12,6 @@
 <meta name="description" content="Contact HazeCraft Tech.">
 </head><body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="container navbar stack">
     <a href="../index.html" class="brand">
@@ -21,14 +19,15 @@
       Haze<span>Craft</span>
     </a>
 
-    <button class="menu-toggle" data-nav-toggle aria-label="Open menu">☰</button>
-
     <nav class="nav" data-nav>
-      <!-- Solutions dropdown -->
       <div class="menu">
         <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Solutions ▾</button>
         <div class="menu-panel" role="menu">
           <div class="menu-list">
+            <a class="menu-item" href="../solutions/web-solutions.html">
+              <strong>Web Solutions</strong>
+              <small>Websites, automations, Ads & lead gen.</small>
+            </a>
             <a class="menu-item" href="../solutions/ai.html">
               <strong>AI Solutions</strong>
               <small>Vision, moderation, and automation to cut toil & risk.</small>
@@ -49,7 +48,6 @@
         </div>
       </div>
 
-      <!-- Products dropdown -->
       <div class="menu">
         <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Products ▾</button>
         <div class="menu-panel" role="menu">
@@ -66,29 +64,24 @@
         </div>
       </div>
 
-      <a href="contact/index.html">Contact</a>
+      <a href="index.html">Contact</a>
     </nav>
   </div>
 </header>
-
-
-
 
 <main class="container" style="padding:36px 0">
   <div class="form-card">
     <h1 class="form-title">
         Talk to an Expert
         <small id="topic-hint" class="hint" style="display:block;margin-top:6px">
-            AI, Networking, Cloud, or OTT/Media
+            AI, Networking, Cloud, OTT/Media, or Web Solutions
         </small>
     </h1>
 
     <form id="hc-contact" method="POST" action="https://formspree.io/f/meoleeoz">
-      <!-- Formspree helpers -->
       <input type="hidden" name="_subject" value="New website inquiry — HazeCraft Tech">
       <input type="hidden" name="_template" value="table">
-      <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
-      <input type="hidden" name="_redirect" value="https://yourdomain/sent.html">
+      <input type="text" name="_gotcha" style="display:none"> <input type="hidden" name="_redirect" value="https://hazecrafttech.com/sent.html">
 
       <div class="form-grid">
         <div class="field">
@@ -139,6 +132,7 @@
           <label>Area of Interest<span class="req">*</span></label>
           <select name="interest" required>
             <option value="" selected disabled>Select…</option>
+            <option>Web Solutions</option>
             <option>AI Solutions</option>
             <option>Networking</option>
             <option>Cloud / AKS</option>
@@ -166,32 +160,4 @@ const form = document.getElementById('hc-contact');
 const statusEl = document.getElementById('hc-status');
 form.addEventListener('submit', async (e)=>{
   e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.disabled = true; statusEl.textContent = 'Sending…';
-
-  try{
-    const resp = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
-    if(resp.ok){
-      statusEl.textContent = 'Thanks! We’ll be in touch shortly.';
-      form.reset();
-    }else{
-      statusEl.textContent = 'Could not send. Please try again.';
-    }
-  }catch(err){
-    statusEl.textContent = 'Network error. Please try again.';
-  }finally{
-    btn.disabled = false;
-  }
-});
-</script>
-
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container">
-    © <span id="y"></span> HazeCraft Tech Inc • <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>
-  </div>
-</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-<script src="assets/app.js"></script>
-</body></html>
+  const btn = form.querySelector('
