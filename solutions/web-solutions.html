@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><title>Web Solutions & Automation • HazeCraft Tech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preload" as="image" href="../assets/web-hero.jpg" fetchpriority="high">
+<link rel="icon" href="../assets/HC.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/HC32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/HC180.png">
+<meta name="theme-color" content="#0b0d10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/styles.css">
+<meta name="description" content="Custom web development, landing pages, booking automations, and Google Ads designed to capture leads and streamline operations.">
+
+<style>
+/* layout helpers */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 16px;
+}
+.section-tight { padding: 16px 0; }
+@media (max-width: 1200px) {
+  .grid-4 { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+}
+@media (max-width: 640px) {
+  .grid-4 { grid-template-columns: 1fr; }
+}
+.hero-inner { display:flex; align-items:flex-start; gap:32px; flex-wrap:wrap; }
+.hero-inner > div { flex:1 1 420px; }
+.hero-inner .tagline { flex:0 1 560px; margin-top:0; }
+
+/* Case study wide card styling */
+.case-study-card {
+  border-left: 4px solid #00e5ff; /* Matches Hazecraft accent */
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.03); /* Subtle background for dark mode */
+  border-radius: 0 8px 8px 0;
+}
+.case-study-card ul {
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+.case-study-card li {
+  margin-bottom: 8px;
+}
+</style>
+</head><body>
+
+<header class="site-header">
+  <div class="container navbar stack">
+    <a href="../index.html" class="brand">
+      <img class="brand-logo" src="../assets/HC.svg" alt="Hazecraft Logo">
+      Haze<span>Craft</span>
+    </a>
+    <nav class="nav" data-nav>
+      <div class="menu">
+        <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Solutions ▾</button>
+        <div class="menu-panel" role="menu">
+          <div class="menu-list">
+            <a class="menu-item" href="web-solutions.html">
+              <strong>Web Solutions</strong>
+              <small>Websites, automations, Ads & lead gen.</small>
+            </a>
+            <a class="menu-item" href="ai.html">
+              <strong>AI Solutions</strong>
+              <small>Copilots, document intelligence, search & guardrails.</small>
+            </a>
+            <a class="menu-item" href="networking.html">
+              <strong>Networking</strong>
+              <small>Azure hub/spoke, ER, BGP, firewalls, zero-trust patterns.</small>
+            </a>
+            <a class="menu-item" href="cloud.html">
+              <strong>Cloud</strong>
+              <small>Landing zones, CNI/AKS, IaC with Terraform & ADO pipelines.</small>
+            </a>
+            <a class="menu-item" href="ott-media.html">
+              <strong>OTT / Media</strong>
+              <small>SmartSkips “Family Mode” filtering & playback SDK.</small>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button class="drop-btn" aria-haspopup="true" aria-expanded="false">Products ▾</button>
+        <div class="menu-panel" role="menu">
+          <div class="menu-list">
+            <a class="menu-item" href="../products/smartskips/index.html">
+              <strong>SmartSkips</strong>
+              <small>Filtering engine with profiles & skip-maps.</small>
+            </a>
+            <a class="menu-item" href="../products/smartskips/index.html#demo">
+              <strong>Player Demo</strong>
+              <small>Family Mode playback with profile toggles.</small>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="../contact/index.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>Web platforms without the busywork</h1>
+        <p class="lead">We don't just build websites; we build digital operational engines. Custom web development and backend automations designed to capture leads and streamline operations.</p>
+        <p class="lead">From high-converting landing pages to fully automated service portals, we handle the entire tech stack so you can focus on growth and customer experience.</p>
+      </div>
+
+      <div class="tagline tile1">
+        <img
+        src="../assets/web-hero.jpg"
+        width="1000"
+        height="700"
+        alt="Automate and Convert"
+        decoding="sync"
+        fetchpriority="high"
+        style="opacity:1"
+        />
+        <div class="over">
+          <span class="unlock">AUTOMATE &</span><br>
+          <span class="simplicity">CONVERT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-tight">
+    <h2 class="h2">Our Web Solutions</h2>
+    <div class="grid-4">
+      <div class="card">
+        <h3>Full-Scale Web Dev</h3>
+        <p>Secure, responsive websites and custom CMS setups built to serve as the operational foundation for your business.</p>
+      </div>
+      <div class="card">
+        <h3>Landing Pages</h3>
+        <p>High-conversion, single-page deployments designed specifically for rapid lead generation and targeted ad campaigns.</p>
+      </div>
+      <div class="card">
+        <h3>Business Automation</h3>
+        <p>Zero-touch booking systems, CRM integrations, and payment gateways that eliminate manual admin work.</p>
+      </div>
+      <div class="card">
+        <h3>Ads & Lead Gen</h3>
+        <p>Architected Google Ads campaigns designed to drive high-intent, converting traffic directly to your optimized pages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-tight" style="margin-top: 24px;">
+    <div class="card case-study-card">
+      <h2 class="h2" style="margin-top: 0;">Featured Case Study: Healthcare Booking Automation</h2>
+      <p><strong>The Challenge:</strong> A local healthcare clinic needed to modernize its booking process, reduce administrative overhead, eliminate manual scheduling conflicts, and elevate the patient communication experience.</p>
+      <p><strong>The HazeCraft Solution:</strong> We engineered a completely automated, enterprise-grade booking ecosystem designed to protect the practitioner's time.</p>
+      <ul>
+        <li><strong>Smart Scheduling:</strong> Programmed dynamic calendar logic enforcing a mandatory 15-minute turnaround buffer between all appointments.</li>
+        <li><strong>Automated Protection:</strong> Mathematically enforced 24-hour cancellation policy with secure, self-service client links and custom routing pages.</li>
+        <li><strong>Zero-Miss Reminders:</strong> Configured server-level Cron Jobs to bypass standard traffic limitations, ensuring punctual 24-hour arrival and parking notifications.</li>
+      </ul>
+      <p style="margin-top: 20px;">
+        <a href="../contact/index.html" style="font-weight: bold; text-decoration: underline;">Ready to automate your business? Request a Platform Review →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="container section-tight">
+    <h2 class="h2">Our Technology Stack</h2>
+    <div class="grid grid-3" style="margin-top:10px">
+      <div class="card">
+        <h3>Development & CMS</h3>
+        <p>WordPress, React, TypeScript, and modern HTML5/CSS3 architectures for fast, highly responsive front-ends.</p>
+      </div>
+      <div class="card">
+        <h3>Infrastructure</h3>
+        <p>GitHub, Netlify, and custom cPanel server administration for reliable DNS and server-side operations.</p>
+      </div>
+      <div class="card">
+        <h3>Automation & Marketing</h3>
+        <p>Make (Webhooks/APIs), Google Ads, and marketing integrations to push your customer data exactly where it needs to go.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    © <span id="y"></span> HazeCraft Tech Inc • <a href="mailto:connect@hazecrafttech.com">connect@hazecrafttech.com</a>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="../assets/app.js"></script>
+</body></html>
