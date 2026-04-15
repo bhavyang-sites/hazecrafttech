@@ -32,17 +32,46 @@
 .hero-inner .tagline { flex:0 1 560px; margin-top:0; }
 
 /* Case study wide card styling */
+/* Updated Case Study Box */
 .case-study-card {
+  background: linear-gradient(145deg, #161a20 0%, #0b0d10 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-left: 4px solid #00e5ff;
-  padding: 32px;
-  border-radius: 0 8px 8px 0;
+  border-radius: 12px; /* All corners beautifully rounded now */
+  padding: 0; /* Moved padding to the inner container for the scrollbar */
+  position: relative;
 }
-.case-study-card ul {
+
+/* The Scrolling Container */
+.case-study-content {
+  padding: 32px;
+  max-height: 420px; /* Locks the box size */
+  overflow-y: auto;  /* Enables vertical scrolling */
+}
+
+/* Custom Professional Scrollbar */
+.case-study-content::-webkit-scrollbar {
+  width: 8px;
+}
+.case-study-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0 12px 12px 0;
+}
+.case-study-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.2); /* Subtle cyan thumb */
+  border-radius: 4px;
+}
+.case-study-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.5); /* Brightens when they grab it */
+}
+
+.case-study-content ul {
   padding-left: 20px;
   margin-bottom: 24px;
 }
-.case-study-card li {
-  margin-bottom: 8px;
+.case-study-content li {
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 </style>
 </head><body>
@@ -154,17 +183,31 @@
 
   <section class="container section-tight" style="margin-top: 24px;">
     <div class="card case-study-card">
-      <h2 class="h2" style="margin-top: 0;">Featured Case Study: Healthcare Booking Automation</h2>
-      <p><strong>The Challenge:</strong> A local healthcare clinic needed to modernize its booking process, reduce administrative overhead, eliminate manual scheduling conflicts, and elevate the patient communication experience.</p>
-      <p><strong>The HazeCraft Solution:</strong> We engineered a completely automated, enterprise-grade booking ecosystem designed to protect the practitioner's time.</p>
-      <ul>
-        <li><strong>Smart Scheduling:</strong> Programmed dynamic calendar logic enforcing a mandatory 15-minute turnaround buffer between all appointments.</li>
-        <li><strong>Automated Protection:</strong> Mathematically enforced 24-hour cancellation policy with secure, self-service client links and custom routing pages.</li>
-        <li><strong>Zero-Miss Reminders:</strong> Configured server-level Cron Jobs to bypass standard traffic limitations, ensuring punctual 24-hour arrival and parking notifications.</li>
-      </ul>
-      <p style="margin-top: 20px;">
-        <a href="../contact/index.html" style="font-weight: bold; text-decoration: underline;">Ready to automate your business? Request a Platform Review →</a>
-      </p>
+      <div class="case-study-content">
+        <h2 class="h2" style="margin-top: 0;">Featured Case Study: Healthcare Booking Automation</h2>
+        <p><strong>The Challenge:</strong> A local healthcare clinic needed to modernize its booking process, reduce administrative overhead, eliminate manual scheduling conflicts, and elevate the overall patient communication experience.</p>
+        <p><strong>The HazeCraft Solution:</strong> We engineered a completely automated, enterprise-grade booking ecosystem designed to protect the practitioner's time and seamlessly manage the entire client lifecycle.</p>
+
+        <h3 style="font-size: 1.1rem; color: #00e5ff; margin-top: 28px;">System Automation & Operations</h3>
+        <ul>
+          <li><strong>Dynamic Schedule Buffering:</strong> Configured backend logic to automatically enforce a mandatory 15-minute turnaround buffer between all appointments (30, 45, or 60 minutes) to prevent schedule overlap.</li>
+          <li><strong>Cancellation Policy Enforcement:</strong> Developed and integrated custom routing pages, configuring system rules to mathematically reject online cancellation attempts within 24 hours of the scheduled service time.</li>
+          <li><strong>Zero-Miss Reminders:</strong> Configured server-level Cron Jobs to bypass standard CMS traffic limitations, ensuring punctual 24-hour automated reminder workflows fire exactly on time.</li>
+        </ul>
+
+        <h3 style="font-size: 1.1rem; color: #00e5ff; margin-top: 24px;">Client Experience & Brand Identity</h3>
+        <ul>
+          <li><strong>Transactional Email Overhaul:</strong> Replaced default plain-text notifications with custom-coded HTML templates for all automated Customer and Staff communications.</li>
+          <li><strong>Brand Integration:</strong> Embedded responsive clinic logos, dynamic service variables, parking instructions, and single-click Google Maps location links into all outbound workflows.</li>
+          <li><strong>Self-Service Capabilities:</strong> Engineered dynamic, secure cancellation links within client emails, allowing for frictionless, automated schedule updates that instantly release calendar availability without manual staff intervention.</li>
+        </ul>
+
+        <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
+          <a href="../contact/index.html" style="font-weight: bold; color: #fff; text-decoration: none; font-size: 1.05rem;">
+            Ready to automate your business? <span style="color: #00e5ff; transition: opacity 0.2s;">Request a Platform Review →</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
