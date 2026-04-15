@@ -477,6 +477,34 @@ main > section:last-of-type{ padding-bottom:24px; }
   width:100%;
   height:auto;
 }
+/* HazeCraft Primary Button */
+.btn-primary {
+  background-color: #00e5ff; /* Brand accent color */
+  color: #0b0d10; /* Dark text for high contrast & readability */
+  border: 1px solid #00e5ff;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.25s ease; /* Smooth transition for all hover effects */
+  box-shadow: 0 4px 12px rgba(0, 229, 255, 0.15); /* Subtle ambient glow */
+}
+
+/* Hover State - The "Professional Highlight" */
+.btn-primary:hover {
+  background-color: transparent; /* Makes the center hollow */
+  color: #00e5ff; /* Turns text cyan */
+  box-shadow: 0 6px 16px rgba(0, 229, 255, 0.3); /* Stronger glow on hover */
+  transform: translateY(-2px); /* Slight "lift" effect */
+}
+
+/* Active/Clicked State */
+.btn-primary:active {
+  transform: translateY(0); /* Button presses back down */
+  box-shadow: 0 2px 6px rgba(0, 229, 255, 0.2);
+}
 
 
 
